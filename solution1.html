@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Document Intelligence • Revenue-Grade Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="solution1.css">
+</head>
+<body>
+  <div class="grid-background"></div>
+  <div class="content-wrapper">
+    
+    <!-- Hero with live demo preview -->
+    <section class="hero fade-up" id="heroSection">
+      <div class="hero-text">
+        <div class="badge-row">
+          <span class="badge badge-pulse">🚀 Live in Production</span>
+          <span class="badge">⚡ 92% Accuracy</span>
+          <span class="badge">🔒 SOC 2 Ready</span>
+        </div>
+        <h1>Turn Document Chaos<br>Into Revenue</h1>
+        <p class="hero-sub">80–90% less manual work. 2 hours → 20 minutes. A cost center becomes a monetizable AI product you own and deploy.</p>
+        
+        <div class="stat-proof">
+          <div class="stat-item">
+            <div class="stat-number" data-target="87">0</div>
+            <div class="stat-label">% Labor Saved</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="92">0</div>
+            <div class="stat-label">% Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="18">0</div>
+            <div class="stat-label">Min Avg Time</div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; margin-top: 2.5rem;">
+          <a href="#demo" class="primary-btn">Book Technical Demo</a>
+          <a href="#calculator" class="secondary-btn">Calculate Your ROI</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="live-demo-preview">
+          <div class="demo-header">
+            <span class="demo-tag">LIVE ENGINE</span>
+            <span class="demo-status">● Processing</span>
+          </div>
+          <div class="demo-content">
+            <div class="doc-in">
+              <div class="doc-icon">📄</div>
+              <div class="doc-name">invoice_472.pdf</div>
+              <div class="doc-status">Unstructured</div>
+            </div>
+            <div class="demo-arrow">
+              <svg width="60" height="24" viewBox="0 0 60 24">
+                <path d="M2 12h52m0 0l-6-6m6 6l-6 6" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="doc-out">
+              <div class="json-preview">
+                <div class="json-line"><span class="json-key">"vendor":</span> <span class="json-value">"Acme Corp"</span></div>
+                <div class="json-line"><span class="json-key">"total":</span> <span class="json-value">$1,847.50</span></div>
+                <div class="json-line"><span class="json-key">"validated":</span> <span class="json-bool">✓ true</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-footer">
+            <div class="processing-bar">
+              <div class="processing-fill"></div>
+            </div>
+            <div class="processing-text">Extracted in 2.4s</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry selector -->
+    <section class="industry-selector fade-up" id="industries">
+      <h2 style="text-align:center; margin-bottom: 2.5rem;">Built For Your Industry</h2>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <div class="industry-icon">🏦</div>
+          <h3>Finance & Banking</h3>
+          <p>Loan apps, KYC forms, statements</p>
+          <div class="industry-stat">92% faster approval</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Claims, patient forms, records</p>
+          <div class="industry-stat">85% cost reduction</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">⚖️</div>
+          <h3>Legal</h3>
+          <p>Contracts, filings, discovery</p>
+          <div class="industry-stat">3x throughput</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>POs, invoices, compliance</p>
+          <div class="industry-stat">90% error reduction</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🚛</div>
+          <h3>Logistics</h3>
+          <p>BOLs, customs, tracking docs</p>
+          <div class="industry-stat">18min avg processing</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon">🛡️</div>
+          <h3>Insurance</h3>
+          <p>Claims, underwriting, policies</p>
+          <div class="industry-stat">$2.8M annual savings</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="before-after fade-up" id="comparison">
+      <h2 style="text-align:center; margin-bottom: 3rem;">The Difference Is Night & Day</h2>
+      <div class="comparison-wrapper">
+        <div class="comparison-side before-side">
+          <div class="comparison-label">❌ Legacy OCR</div>
+          <div class="comparison-detail">
+            <div class="detail-icon">⏱️</div>
+            <div class="detail-text">
+              <strong>2 hours per document</strong>
+              <span>Manual corrections, format fails</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">📉</div>
+            <div class="detail-text">
+              <strong>~80% accuracy</strong>
+              <span>Breaks on new layouts</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">💸</div>
+            <div class="detail-text">
+              <strong>Pure cost center</strong>
+              <span>No monetization path</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">🔧</div>
+            <div class="detail-text">
+              <strong>Template dependent</strong>
+              <span>Requires dev work per change</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-divider">
+          <div class="vs-badge">VS</div>
+        </div>
+
+        <div class="comparison-side after-side">
+          <div class="comparison-label">✅ Context-Aware AI</div>
+          <div class="comparison-detail">
+            <div class="detail-icon">⚡</div>
+            <div class="detail-text">
+              <strong>18 min average</strong>
+              <span>Instant structured output</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">📈</div>
+            <div class="detail-text">
+              <strong>92%+ accuracy</strong>
+              <span>Context validation layer</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">💰</div>
+            <div class="detail-text">
+              <strong>New revenue stream</strong>
+              <span>White-label SaaS ready</span>
+            </div>
+          </div>
+          <div class="comparison-detail">
+            <div class="detail-icon">🧠</div>
+            <div class="detail-text">
+              <strong>Reads by meaning</strong>
+              <span>Zero template config</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calculator fade-up" id="calculator">
+      <div class="calculator-container glass-card">
+        <h2 style="margin-bottom: 1.5rem; text-align: center;">Calculate Your ROI</h2>
+        <p style="text-align: center; color: #94a3b8; margin-bottom: 2.5rem;">See your actual savings with AI automation</p>
+        
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label>Documents processed per month</label>
+            <input type="number" id="docCount" value="500" min="100" step="100">
+          </div>
+          <div class="input-group">
+            <label>Avg manual time per doc (minutes)</label>
+            <input type="number" id="manualTime" value="120" min="10" step="10">
+          </div>
+          <div class="input-group">
+            <label>Hourly labor cost ($)</label>
+            <input type="number" id="laborCost" value="45" min="15" step="5">
+          </div>
+        </div>
+
+        <div class="calculator-results">
+          <div class="result-card">
+            <div class="result-label">Current Monthly Cost</div>
+            <div class="result-value" id="currentCost">$45,000</div>
+          </div>
+          <div class="result-arrow">→</div>
+          <div class="result-card highlight">
+            <div class="result-label">With AI Engine</div>
+            <div class="result-value" id="aiCost">$5,400</div>
+          </div>
+          <div class="result-savings">
+            <div class="savings-label">Monthly Savings</div>
+            <div class="savings-value" id="monthlySavings">$39,600</div>
+            <div class="savings-label" style="margin-top: 0.8rem;">Annual Savings</div>
+            <div class="savings-value annual" id="annualSavings">$475,200</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Pipeline -->
+    <section class="pipeline-section fade-up" id="pipeline">
+      <h2 style="text-align:center; margin-bottom: 1rem;">AI-Native Pipeline</h2>
+      <p style="text-align:center; color:#94a3b8; max-width: 700px; margin: 0 auto 3rem;">Seven intelligent stages that turn chaos into structured, validated, actionable data</p>
+      
+      <div class="pipeline-flow">
+        <div class="pipeline-step">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+              <path d="M13 2v7h7"/>
+            </svg>
+          </div>
+          <h4>Multi-Modal Ingest</h4>
+          <p>PDF, scans, emails, images</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h4>Semantic Classify</h4>
+          <p>Vector + RAG analysis</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+            </svg>
+          </div>
+          <h4>Agentic Extract</h4>
+          <p>LLM orchestration</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">4</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h4>Context Validate</h4>
+          <p>Knowledge graph checks</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">5</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+          <h4>Structured Push</h4>
+          <p>JSON to any system</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">6</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <path d="M14 2v6h6"/>
+              <path d="M16 13H8M16 17H8M10 9H8"/>
+            </svg>
+          </div>
+          <h4>Dynamic Generate</h4>
+          <p>Forms, reports, docs</p>
+        </div>
+
+        <div class="pipeline-connector"></div>
+
+        <div class="pipeline-step">
+          <div class="step-number">7</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h4>Real-Time Infer</h4>
+          <p>HITL ready</p>
+        </div>
+      </div>
+
+      <div class="tech-tags">
+        <span class="tech-tag">🧠 RAG</span>
+        <span class="tech-tag">⚡ Agentic Workflows</span>
+        <span class="tech-tag">🔍 Semantic Search</span>
+        <span class="tech-tag">🗄️ Vector DBs</span>
+        <span class="tech-tag">💡 Context Reasoning</span>
+      </div>
+    </section>
+
+
+    <!-- Tech Stack -->
+    <section class="tech-stack fade-up">
+      <h3 style="text-align:center; margin-bottom: 2rem; font-size: 1.8rem;">Enterprise-Grade AI Stack</h3>
+      <div class="tech-grid">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">React.js</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">LayoutLM</span>
+        <span class="tech-badge">GPT-4 / Claude</span>
+        <span class="tech-badge">RAG Pipelines</span>
+        <span class="tech-badge">Vector DBs</span>
+        <span class="tech-badge">LangChain</span>
+        <span class="tech-badge">Stripe</span>
+        <span class="tech-badge">OAuth 2.0</span>
+        <span class="tech-badge">REST APIs</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">AWS/Azure</span>
+        <span class="tech-badge">Kubernetes</span>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta fade-up">
+      <div class="cta-container glass-card">
+        <h2>This Is Your Flagship AI Investment</h2>
+        <p>Document processing is the highest-ROI pain point across every industry. This is production-grade, billable, and scalable from day one.</p>
+        <div class="cta-buttons">
+          <a href="#" class="primary-btn large">Book Technical Demo</a>
+          <a href="#" class="secondary-btn large">Read More </a>
+        </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Deploy in your cloud</span>
+          </div>
+          <div class="cta-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>White-label ready</span>
+          </div>
+          <div class="cta-feature">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>SOC 2 compliant</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Fade-up scroll animations
+    (function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      function checkVisibility() {
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          if (rect.top <= windowHeight - 60 && rect.bottom >= 0) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', checkVisibility);
+      window.addEventListener('resize', checkVisibility);
+      setTimeout(checkVisibility, 120);
+      document.addEventListener('DOMContentLoaded', checkVisibility);
+    })();
+
+    // Animated counters
+    function animateCounter(element, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          element.textContent = Math.round(target);
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.round(start);
+        }
+      }, 16);
+    }
+
+    // Trigger counters on scroll
+    let countersAnimated = false;
+    window.addEventListener('scroll', () => {
+      if (countersAnimated) return;
+      const statsSection = document.querySelector('.stat-proof');
+      if (!statsSection) return;
+      const rect = statsSection.getBoundingClientRect();
+      if (rect.top <= window.innerHeight - 100) {
+        countersAnimated = true;
+        document.querySelectorAll('.stat-number').forEach(el => {
+          const target = parseInt(el.dataset.target);
+          animateCounter(el, target);
+        });
+      }
+    });
+
+    // ROI Calculator
+    function updateROI() {
+      const docCount = parseInt(document.getElementById('docCount').value) || 500;
+      const manualTime = parseInt(document.getElementById('manualTime').value) || 120;
+      const laborCost = parseInt(document.getElementById('laborCost').value) || 45;
+
+      const currentMonthlyMinutes = docCount * manualTime;
+      const currentMonthlyCost = (currentMonthlyMinutes / 60) * laborCost;
+
+      const aiTime = manualTime * 0.15;
+      const aiMonthlyMinutes = docCount * aiTime;
+      const aiMonthlyCost = (aiMonthlyMinutes / 60) * laborCost;
+
+      const monthlySavings = currentMonthlyCost - aiMonthlyCost;
+      const annualSavings = monthlySavings * 12;
+
+      document.getElementById('currentCost').textContent = '$' + currentMonthlyCost.toLocaleString('en-US', {maximumFractionDigits: 0});
+      document.getElementById('aiCost').textContent = '$' + aiMonthlyCost.toLocaleString('en-US', {maximumFractionDigits: 0});
+      document.getElementById('monthlySavings').textContent = '$' + monthlySavings.toLocaleString('en-US', {maximumFractionDigits: 0});
+      document.getElementById('annualSavings').textContent = '$' + annualSavings.toLocaleString('en-US', {maximumFractionDigits: 0});
+    }
+
+    document.getElementById('docCount')?.addEventListener('input', updateROI);
+    document.getElementById('manualTime')?.addEventListener('input', updateROI);
+    document.getElementById('laborCost')?.addEventListener('input', updateROI);
+
+    updateROI();
+  </script>
+</body>
+</html>

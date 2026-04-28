@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce-Native AI Copilot • Intelligence Inside Your CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="solution2.css">
+</head>
+<body>
+  <div class="grid-background"></div>
+  <div class="content-wrapper">
+    
+    <!-- Hero with terminal-style interaction -->
+    <section class="hero fade-up" id="heroSection">
+      <div class="hero-text">
+        <div class="badge-row">
+          <span class="badge">⚡ Salesforce Native</span>
+          <span class="badge badge-glow">🔍 Live SOQL</span>
+          <span class="badge">📊 Real-Time Reports</span>
+        </div>
+        <h1>Your CRM Data<br/>Speaks Natural Language</h1>
+        <p class="hero-sub">An AI copilot embedded directly inside Salesforce. Ask questions in plain English. Get instant, data-backed answers pulled from live CRM data—no dashboards, no waiting for analysts.</p>
+        
+        <div class="hero-stats">
+          <div class="stat-block">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-content">
+              <div class="stat-value">2.4s</div>
+              <div class="stat-label">Avg Query Response</div>
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-content">
+              <div class="stat-value">Zero</div>
+              <div class="stat-label">Analyst Dependency</div>
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-icon">📈</div>
+            <div class="stat-content">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Data Accuracy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="#demo" class="primary-btn">Book Technical Demo</a>
+          <a href="#architecture" class="secondary-btn">Watch It Work</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">Salesforce AI Copilot</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">You:</span>
+              <span class="input-text typed-text"></span>
+              <span class="cursor">|</span>
+            </div>
+            <div class="terminal-response hidden" id="response1">
+              <span class="prompt-ai">AI:</span>
+              <span class="response-text">Analyzing APAC pipeline...</span>
+            </div>
+            <div class="terminal-data hidden" id="data1">
+              <div class="data-header">Running SOQL: SELECT Name, Amount, StageName, Probability FROM Opportunity WHERE Region__c = 'APAC'...</div>
+              <div class="data-table">
+                <div class="data-row header">
+                  <span>Opportunity</span>
+                  <span>Amount</span>
+                  <span>Risk Level</span>
+                </div>
+                <div class="data-row">
+                  <span>Acme Corp Renewal</span>
+                  <span>$890K</span>
+                  <span class="risk high">HIGH</span>
+                </div>
+                <div class="data-row">
+                  <span>TechStart Expansion</span>
+                  <span>$450K</span>
+                  <span class="risk medium">MEDIUM</span>
+                </div>
+                <div class="data-row">
+                  <span>Global Systems Deal</span>
+                  <span>$1.2M</span>
+                  <span class="risk high">HIGH</span>
+                </div>
+              </div>
+              <div class="data-summary">
+                <strong>Key Risks:</strong> 2 high-value deals ($2.09M) stuck in Negotiation stage for 45+ days. Contact owners: Sarah Kim, Mike Chen.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Makes It Different -->
+    <section class="difference-section fade-up">
+      <h2 class="section-title">Not A Generic Chat Widget</h2>
+      <div class="difference-grid">
+        <div class="diff-card">
+          <div class="diff-icon">🔗</div>
+          <h3>Salesforce-Native</h3>
+          <p>Built with LWC, Apex, SOQL. Lives inside your Salesforce instance. Zero third-party data exposure.</p>
+          <div class="diff-badge">Native Integration</div>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">⚡</div>
+          <h3>Live Data Queries</h3>
+          <p>Executes real SOQL queries at conversation time. Pulls from Opportunities, Accounts, Cases, Custom Objects—whatever you ask.</p>
+          <div class="diff-badge">Real-Time Access</div>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📄</div>
+          <h3>Document Intelligence</h3>
+          <p>Reads uploaded PDFs, contracts, proposals from Salesforce Files. Extracts context and answers questions about file contents.</p>
+          <div class="diff-badge">OCR + NLP</div>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🧠</div>
+          <h3>Contextual Memory</h3>
+          <p>Remembers the conversation thread. Ask follow-ups, refine queries, drill deeper—it maintains full context across the session.</p>
+          <div class="diff-badge">Stateful Conversations</div>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📊</div>
+          <h3>Report API Integration</h3>
+          <p>Pulls and summarizes existing Salesforce reports. "Show me last quarter's sales by region" → instant structured answer.</p>
+          <div class="diff-badge">Report Parsing</div>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📌</div>
+          <h3>Pin & Share Insights</h3>
+          <p>Users can pin critical answers for quick access later. Share insights across teams without re-running queries.</p>
+          <div class="diff-badge">Knowledge Persistence</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo Scenarios -->
+    <section class="demo-scenarios fade-up" id="demo">
+      <h2 class="section-title">Real Questions. Real Answers.</h2>
+      <p class="section-subtitle">Click any scenario to see how the AI responds with live CRM data</p>
+      
+      <div class="scenario-grid">
+        <div class="scenario-card" onclick="activateScenario(1)">
+          <div class="scenario-number">01</div>
+          <div class="scenario-content">
+            <div class="scenario-icon">📊</div>
+            <h3>"What are the top risks in our APAC pipeline this quarter?"</h3>
+          </div>
+          <div class="scenario-arrow">→</div>
+        </div>
+
+        <div class="scenario-card" onclick="activateScenario(2)">
+          <div class="scenario-number">02</div>
+          <div class="scenario-content">
+            <div class="scenario-icon">👥</div>
+            <h3>"Which accounts haven't been touched in 60 days?"</h3>
+          </div>
+          <div class="scenario-arrow">→</div>
+        </div>
+
+        <div class="scenario-card" onclick="activateScenario(3)">
+          <div class="scenario-number">03</div>
+          <div class="scenario-content">
+            <div class="scenario-icon">📄</div>
+            <h3>"Summarize the proposal uploaded to the Acme opportunity"</h3>
+          </div>
+          <div class="scenario-arrow">→</div>
+        </div>
+
+        <div class="scenario-card" onclick="activateScenario(4)">
+          <div class="scenario-number">04</div>
+          <div class="scenario-content">
+            <div class="scenario-icon">⚠️</div>
+            <h3>"Show me cases escalated this week by product line"</h3>
+          </div>
+          <div class="scenario-arrow">→</div>
+        </div>
+      </div>
+
+      <div class="scenario-result" id="scenarioResult">
+        <div class="result-header">
+          <span class="result-label">AI Response</span>
+          <button class="close-btn" onclick="closeScenario()">✕</button>
+        </div>
+        <div class="result-body" id="resultBody">
+          <!-- Dynamic content loads here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Deep Dive -->
+    <section class="architecture-section fade-up" id="architecture">
+      <h2 class="section-title">How It Works Under The Hood</h2>
+      <div class="arch-container">
+        <div class="arch-layer">
+          <div class="layer-number">01</div>
+          <div class="layer-content">
+            <h3>User Query (Natural Language)</h3>
+            <p>Ask anything in plain English via Lightning Web Component interface</p>
+            <div class="layer-tech">LWC · Lightning Message Service</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer">
+          <div class="layer-number">02</div>
+          <div class="layer-content">
+            <h3>Intent Parsing & Entity Recognition</h3>
+            <p>LLM analyzes query, extracts entities (objects, fields, filters, time ranges)</p>
+            <div class="layer-tech">GPT-4 / Claude · Custom Prompt Engineering</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer">
+          <div class="layer-number">03</div>
+          <div class="layer-content">
+            <h3>SOQL Query Generation</h3>
+            <p>AI constructs valid SOQL based on Salesforce schema and user permissions</p>
+            <div class="layer-tech">Apex · Schema Describe · Field-Level Security</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer">
+          <div class="layer-number">04</div>
+          <div class="layer-content">
+            <h3>Live Data Retrieval</h3>
+            <p>Apex controller executes query, respects sharing rules, returns results</p>
+            <div class="layer-tech">Apex REST · Database.query() · WITH SECURITY_ENFORCED</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer">
+          <div class="layer-number">05</div>
+          <div class="layer-content">
+            <h3>Document Processing (If Needed)</h3>
+            <p>If query references files, pulls from ContentVersion, OCR extracts text</p>
+            <div class="layer-tech">Salesforce Files · ContentVersion API · OCR Service</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer">
+          <div class="layer-number">06</div>
+          <div class="layer-content">
+            <h3>Response Synthesis</h3>
+            <p>LLM formats data into natural language answer with tables, insights, next steps</p>
+            <div class="layer-tech">LLM · Structured Output · Markdown Rendering</div>
+          </div>
+          <div class="layer-arrow">↓</div>
+        </div>
+
+        <div class="arch-layer last">
+          <div class="layer-number">07</div>
+          <div class="layer-content">
+            <h3>Display & Pinning</h3>
+            <p>Render in LWC component, allow user to pin answer for team access</p>
+            <div class="layer-tech">LWC · Custom Metadata · Lightning Data Service</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases By Role -->
+    <section class="roles-section fade-up">
+      <h2 class="section-title">Built For Every Salesforce User</h2>
+      <div class="roles-grid">
+        <div class="role-card">
+          <div class="role-header">
+            <div class="role-icon">💼</div>
+            <h3>Sales Reps</h3>
+          </div>
+          <ul class="role-questions">
+            <li>"Which of my deals are at risk this month?"</li>
+            <li>"Show me contacts who engaged with our last email"</li>
+            <li>"Pull the pricing from the ABC Corp proposal"</li>
+          </ul>
+          <div class="role-impact">Stop digging through records. Get instant intel.</div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <div class="role-icon">📈</div>
+            <h3>Sales Managers</h3>
+          </div>
+          <ul class="role-questions">
+            <li>"What's our pipeline coverage by rep?"</li>
+            <li>"Which territories are underperforming performance YTD targets and showing declining trends?"</li>
+            <li>"Show forecast vs actuals for Q1 quickly"</li>
+          </ul>
+          <div class="role-impact">Real-time pipeline visibility without BI team.</div>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <div class="role-icon">🎧</div>
+            <h3>Support Agents</h3>
+          </div>
+          <ul class="role-questions">
+            <li>"Give me all open P1 cases for this account"</li>
+            <li>"What's the resolution SLA on Case #12847?"</li>
+            <li>"Show me product issues trending this week"</li>
+          </ul>
+          <div class="role-impact">Faster case resolution with instant context.</div>
+        </div>
+
+        
+    </section>
+
+  
+
+    <!-- Tech Stack -->
+    <section class="tech-section fade-up">
+      <h3 class="section-title">Enterprise Salesforce Stack</h3>
+      <div class="tech-badges">
+        <span class="tech-badge">Lightning Web Components</span>
+        <span class="tech-badge">Apex REST Controllers</span>
+        <span class="tech-badge">SOQL Query Engine</span>
+        <span class="tech-badge">Salesforce Files API</span>
+        <span class="tech-badge">Reports & Dashboards API</span>
+        <span class="tech-badge">ContentVersion OCR</span>
+        <span class="tech-badge">GPT-4 / Claude Integration</span>
+        <span class="tech-badge">Custom Metadata Types</span>
+        <span class="tech-badge">Lightning Data Service</span>
+        <span class="tech-badge">Field-Level Security</span>
+        <span class="tech-badge">Sharing Rules Engine</span>
+        <span class="tech-badge">Lightning Message Service</span>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta fade-up">
+      <div class="cta-box">
+        <div class="cta-badge">Salesforce Native</div>
+        <h2>Stop Building Reports.<br/>Start Asking Questions.</h2>
+        <p>Every team member becomes a data analyst. No training. No waiting. Just instant, accurate answers pulled from your live Salesforce data.</p>
+        
+        <div class="cta-features">
+          <div class="feature-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Native LWC deployment</span>
+          </div>
+          <div class="feature-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Respects all permissions</span>
+          </div>
+          <div class="feature-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Zero data leaves SF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+
+     // Fade-up scroll animations
+(function() {
+  const fadeElements = document.querySelectorAll('.fade-up');
+  function checkVisibility() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top <= windowHeight - 80 && rect.bottom >= 0) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+  setTimeout(checkVisibility, 120);
+  document.addEventListener('DOMContentLoaded', checkVisibility);
+})();
+
+// Terminal typing animation
+const queries = [
+  "What are the top risks in our APAC pipeline this quarter?",
+  "Which accounts haven't been touched in 60 days?",
+  "Show me cases escalated this week by product line",
+  "Summarize our Q1 forecast vs actuals"
+];
+
+let currentQueryIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 80;
+
+function typeQuery() {
+  const typedTextElement = document.querySelector('.typed-text');
+  if (!typedTextElement) return;
+
+  const currentQuery = queries[currentQueryIndex];
+  
+  if (isDeleting) {
+    typedTextElement.textContent = currentQuery.substring(0, charIndex - 1);
+    charIndex--;
+    typingSpeed = 40;
+  } else {
+    typedTextElement.textContent = currentQuery.substring(0, charIndex + 1);
+    charIndex++;
+    typingSpeed = 80;
+  }
+
+  // Show response when query is fully typed
+  if (!isDeleting && charIndex === currentQuery.length) {
+    setTimeout(() => {
+      document.getElementById('response1').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('data1').classList.remove('hidden');
+      }, 1000);
+    }, 500);
+    
+    setTimeout(() => {
+      isDeleting = true;
+      // Hide response before deleting
+      document.getElementById('response1').classList.add('hidden');
+      document.getElementById('data1').classList.add('hidden');
+    }, 5000);
+  }
+
+  // Move to next query
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    currentQueryIndex = (currentQueryIndex + 1) % queries.length;
+    setTimeout(typeQuery, 1000);
+    return;
+  }
+
+  setTimeout(typeQuery, typingSpeed);
+}
+
+// Start typing animation when page loads
+setTimeout(() => {
+  typeQuery();
+}, 1000);
+
+// Scenario activation
+const scenarioData = {
+  1: {
+    title: "APAC Pipeline Risks",
+    query: "SELECT Name, Amount, StageName, Probability, DaysInStage__c FROM Opportunity WHERE Region__c = 'APAC' AND CloseDate = THIS_QUARTER",
+    data: `
+      <div class="data-header">Query executed: Opportunity object, APAC region, current quarter</div>
+      <div class="data-table">
+        <div class="data-row header">
+          <span>Opportunity</span>
+          <span>Amount</span>
+          <span>Days in Stage</span>
+          <span>Risk</span>
+        </div>
+        <div class="data-row">
+          <span>Acme Corp Renewal</span>
+          <span>$890,000</span>
+          <span>47 days</span>
+          <span class="risk high">HIGH</span>
+        </div>
+        <div class="data-row">
+          <span>Global Systems Deal</span>
+          <span>$1,200,000</span>
+          <span>52 days</span>
+          <span class="risk high">HIGH</span>
+        </div>
+        <div class="data-row">
+          <span>TechStart Expansion</span>
+          <span>$450,000</span>
+          <span>28 days</span>
+          <span class="risk medium">MEDIUM</span>
+        </div>
+      </div>
+      <div class="data-summary">
+        <strong>Analysis:</strong> 2 high-value opportunities ($2.09M combined) have been in Negotiation stage for 45+ days. 
+        Owners: Sarah Kim, Mike Chen. Recommended action: Executive sponsor engagement to unblock decision-makers.
+      </div>
+    `
+  },
+  2: {
+    title: "Neglected Accounts",
+    query: "SELECT Name, LastActivityDate, AnnualRevenue FROM Account WHERE LastActivityDate < LAST_N_DAYS:60 AND AnnualRevenue > 500000",
+    data: `
+      <div class="data-header">Query executed: Account object, activity history analysis</div>
+      <div class="data-table">
+        <div class="data-row header">
+          <span>Account Name</span>
+          <span>Annual Revenue</span>
+          <span>Last Touch</span>
+        </div>
+        <div class="data-row">
+          <span>Apex Industries</span>
+          <span>$2.4M</span>
+          <span>87 days ago</span>
+        </div>
+        <div class="data-row">
+          <span>DataCorp Solutions</span>
+          <span>$1.8M</span>
+          <span>72 days ago</span>
+        </div>
+        <div class="data-row">
+          <span>Global Manufacturing</span>
+          <span>$950K</span>
+          <span>65 days ago</span>
+        </div>
+      </div>
+      <div class="data-summary">
+        <strong>Risk Alert:</strong> 3 high-value accounts ($5.15M annual revenue) with no activity in 60+ days. 
+        Churn risk elevated. Suggested: Schedule executive QBR calls this week.
+      </div>
+    `
+  },
+  3: {
+    title: "Document Summary",
+    query: "ContentVersion API → OCR extraction from Salesforce Files",
+    data: `
+      <div class="data-header">Retrieved: Proposal_Acme_Q1_2026.pdf (uploaded Feb 14, 2026)</div>
+      <div class="data-summary" style="margin-bottom: 1rem;">
+        <strong>Document Type:</strong> Commercial Proposal<br>
+        <strong>Total Value:</strong> $890,000 over 24 months<br>
+        <strong>Payment Terms:</strong> Net 30, quarterly billing<br>
+        <strong>Key Deliverables:</strong>
+        <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+          <li>Enterprise license (500 users)</li>
+          <li>24/7 premium support</li>
+          <li>Custom integrations package</li>
+          <li>Dedicated CSM for first 12 months</li>
+        </ul>
+        <strong>Decision Maker:</strong> Sarah Chen, VP Operations<br>
+        <strong>Next Steps:</strong> Proposal review meeting scheduled Apr 30, 2026
+      </div>
+    `
+  },
+  4: {
+    title: "Escalated Cases Analysis",
+    query: "SELECT Id, Subject, ProductLine__c, Priority FROM Case WHERE Status = 'Escalated' AND CreatedDate = THIS_WEEK GROUP BY ProductLine__c",
+    data: `
+      <div class="data-header">Query executed: Case object, escalation analysis by product</div>
+      <div class="data-table">
+        <div class="data-row header">
+          <span>Product Line</span>
+          <span>Escalated Cases</span>
+          <span>Trend</span>
+        </div>
+        <div class="data-row">
+          <span>Cloud Platform</span>
+          <span>12 cases</span>
+          <span class="risk high">↑ 200%</span>
+        </div>
+        <div class="data-row">
+          <span>Analytics Suite</span>
+          <span>5 cases</span>
+          <span class="risk medium">↑ 25%</span>
+        </div>
+        <div class="data-row">
+          <span>Mobile SDK</span>
+          <span>3 cases</span>
+          <span style="color: #22c55e;">→ Stable</span>
+        </div>
+      </div>
+      <div class="data-summary">
+        <strong>Pattern Alert:</strong> Cloud Platform escalations spiked 200% this week. Common theme: API timeout errors after v3.2 release. 
+        Engineering notified. Recommend customer communication about hotfix timeline.
+      </div>
+    `
+  }
+};
+
+function activateScenario(num) {
+  const resultDiv = document.getElementById('scenarioResult');
+  const bodyDiv = document.getElementById('resultBody');
+  
+  const scenario = scenarioData[num];
+  bodyDiv.innerHTML = `
+    <div style="margin-bottom: 1rem;">
+      <div style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">${scenario.title}</div>
+      <div style="color: #94a3b8; font-size: 0.85rem; padding: 0.5rem; background: rgba(37, 99, 235, 0.1); border-radius: 0.4rem;">
+        ${scenario.query}
+      </div>
+    </div>
+    ${scenario.data}
+  `;
+  
+  resultDiv.classList.add('active');
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeScenario() {
+  document.getElementById('scenarioResult').classList.remove('active');
+}
+
+// Make functions global
+window.activateScenario = activateScenario;
+window.closeScenario = closeScenario;
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Touchless PO Processing • Zero-Entry Salesforce Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="solution3.css">
+</head>
+<body>
+  <div class="diagonal-bg"></div>
+  
+  <div class="content-wrapper">
+    
+    <!-- Hero with drag-drop visual -->
+    <section class="hero fade-in" id="heroSection">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-badge">⚡ Salesforce Native</span>
+          <span class="eyebrow-badge">🔒 Zero Third-Party</span>
+        </div>
+        
+        <h1>Drop a PDF.<br>Get a Complete Order.</h1>
+        
+        <p class="hero-description">
+          Fully automated PO processing that lives entirely inside Salesforce. Upload → Extract → Create Records → Done. 10–20 minutes becomes 30 seconds.
+        </p>
+
+        <div class="hero-metrics-inline">
+          <div class="metric-inline">
+            <div class="metric-value">30s</div>
+            <div class="metric-label">Processing Time</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-inline">
+            <div class="metric-value">0%</div>
+            <div class="metric-label">Entry Errors</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-inline">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Salesforce Native</div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="#how" class="btn-primary">Book Technical Demo</a>
+          <a href="#impact" class="btn-secondary">See How It Works</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="upload-zone-demo">
+          <div class="upload-zone">
+            <div class="upload-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <div class="upload-text">Drop PO here</div>
+            <div class="upload-subtext">PDF · DOCX · Excel</div>
+          </div>
+          
+          <div class="processing-visual">
+            <div class="file-card">
+              <div class="file-icon">📄</div>
+              <div class="file-name">PO-2847.pdf</div>
+            </div>
+            
+            <div class="extraction-flow">
+              <div class="extract-badge">Extracting...</div>
+              <div class="progress-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+
+            <div class="output-preview">
+              <div class="output-header">✓ Order Created</div>
+              <div class="output-fields">
+                <div class="field-row">
+                  <span class="field-key">Supplier:</span>
+                  <span class="field-val">Acme Industrial</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-key">Total:</span>
+                  <span class="field-val">$12,847.50</span>
+                </div>
+                <div class="field-row">
+                  <span class="field-key">Line Items:</span>
+                  <span class="field-val">8 products</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works - Simplified Flow -->
+    <section class="how-it-works fade-in" id="how">
+      <div class="section-header">
+        <h2>Three Steps. Zero Manual Entry.</h2>
+        <p class="section-subtitle">Built entirely on Salesforce — LWC, Prompt Builder, Apex. No external platforms.</p>
+      </div>
+
+      <div class="flow-timeline">
+        <div class="flow-step">
+          <div class="step-visual">
+            <div class="step-number">01</div>
+            <div class="step-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+                <path d="M13 2v7h7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>Upload Document</h3>
+            <p>User drops PO (PDF, DOCX, Excel) into Salesforce Files. Trigger fires automatically.</p>
+            <div class="tech-note">Salesforce Files + LWC Component</div>
+          </div>
+        </div>
+
+        <div class="flow-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-visual">
+            <div class="step-number">02</div>
+            <div class="step-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>AI Extraction</h3>
+            <p>Prompt Builder parses document against JSON schema. Extracts supplier, products, quantities, pricing, delivery dates.</p>
+            <div class="tech-note">Prompt Builder + Flex Templates</div>
+          </div>
+        </div>
+
+        <div class="flow-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-visual">
+            <div class="step-number">03</div>
+            <div class="step-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>Record Creation</h3>
+            <p>Apex creates Order, Products, Line Items. File archived. Audit trail complete. Zero human input.</p>
+            <div class="tech-note">Apex + Salesforce Objects</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Split -->
+    <section class="before-after-split fade-in" id="impact">
+      <div class="section-header">
+        <h2>The Before & After</h2>
+      </div>
+
+      <div class="split-container">
+        <div class="split-panel before-panel">
+          <div class="panel-label">❌ Manual Process</div>
+          <div class="panel-content">
+            <div class="impact-item">
+              <div class="impact-icon">⏱️</div>
+              <div class="impact-text">
+                <strong>10–20 minutes</strong>
+                <span>per PO, manual keying</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">❌</div>
+              <div class="impact-text">
+                <strong>5–8% error rate</strong>
+                <span>typos, wrong products</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">📧</div>
+              <div class="impact-text">
+                <strong>Email → Download → Enter</strong>
+                <span>multiple system hops</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">🔍</div>
+              <div class="impact-text">
+                <strong>Manual validation</strong>
+                <span>checking every line item</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split-panel after-panel">
+          <div class="panel-label">✅ Automated Flow</div>
+          <div class="panel-content">
+            <div class="impact-item">
+              <div class="impact-icon">⚡</div>
+              <div class="impact-text">
+                <strong>&lt;30 seconds</strong>
+                <span>end-to-end processing</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">✓</div>
+              <div class="impact-text">
+                <strong>0% error rate</strong>
+                <span>AI extraction + validation</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">📎</div>
+              <div class="impact-text">
+                <strong>Drop → Done</strong>
+                <span>single Salesforce action</span>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">🛡️</div>
+              <div class="impact-text">
+                <strong>Auto audit trail</strong>
+                <span>complete traceability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="impact-callout">
+        <div class="callout-stat">95%</div>
+        <div class="callout-text">time saved on PO processing</div>
+      </div>
+    </section>
+
+    <!-- Why This Matters for Salesforce Orgs -->
+    <section class="why-salesforce fade-in">
+      <div class="section-header">
+        <h2>Built For Salesforce Teams</h2>
+        <p class="section-subtitle">No third-party platforms. No new logins. No change management.</p>
+      </div>
+
+      <div class="salesforce-benefits">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Zero Integration Overhead</h3>
+          <p>Everything runs inside your Salesforce org. No APIs to manage, no external dependencies, no security reviews for third-party tools.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Your Data Stays Your Data</h3>
+          <p>Files never leave Salesforce. Extracted data creates standard Salesforce objects. Full audit history, complete governance control.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <h3>Deploy in Hours, Not Months</h3>
+          <p>Install as a managed package or unmanaged code. Configure JSON schema to match your PO format. Deploy LWC. Done.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+            </svg>
+          </div>
+          <h3>Immediate ROI</h3>
+          <p>Processing 100 POs/month at 15 min each = 25 hours saved. At $40/hr loaded cost, that's $12K annual savings from a single workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack - Salesforce Only -->
+    <section class="tech-stack-simple fade-in">
+      <div class="section-header">
+        <h2>Pure Salesforce Stack</h2>
+      </div>
+      
+      <div class="tech-grid-simple">
+        <div class="tech-item">
+          <div class="tech-item-icon">⚡</div>
+          <div class="tech-item-name">Lightning Web Components</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-icon">🧠</div>
+          <div class="tech-item-name">Prompt Builder</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-icon">📋</div>
+          <div class="tech-item-name">Flex Templates</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-icon">⚙️</div>
+          <div class="tech-item-name">Apex</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-icon">📄</div>
+          <div class="tech-item-name">Salesforce Files</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-icon">🔗</div>
+          <div class="tech-item-name">Standard Objects</div>
+        </div>
+      </div>
+    </section>
+
+   
+
+  </div>
+
+  <script>
+    // Fade-in scroll animations
+    (function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      function checkVisibility() {
+        fadeElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          if (rect.top <= windowHeight - 80 && rect.bottom >= 0) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', checkVisibility);
+      window.addEventListener('resize', checkVisibility);
+      setTimeout(checkVisibility, 150);
+      document.addEventListener('DOMContentLoaded', checkVisibility);
+    })();
+
+    // Upload zone hover animation
+    const uploadZone = document.querySelector('.upload-zone');
+    if (uploadZone) {
+      uploadZone.addEventListener('mouseenter', () => {
+        document.querySelector('.processing-visual').style.opacity = '1';
+        document.querySelector('.processing-visual').style.transform = 'translateY(0)';
+      });
+    }
+
+    // Cycling dots animation
+    setInterval(() => {
+      const dots = document.querySelectorAll('.progress-dots .dot');
+      dots.forEach((dot, i) => {
+        setTimeout(() => {
+          dot.style.transform = 'scale(1.3)';
+          setTimeout(() => {
+            dot.style.transform = 'scale(1)';
+          }, 200);
+        }, i * 200);
+      });
+    }, 2000);
+  </script>
+</body>
+</html>
